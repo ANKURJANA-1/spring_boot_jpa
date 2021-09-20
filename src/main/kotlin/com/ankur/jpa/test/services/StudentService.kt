@@ -40,4 +40,32 @@ class StudentService {
         return studentRepository.findByEmail(email)
     }
 
+    fun getStudentByGuardianEmail(email: String): List<Student> {
+        return studentRepository.findByGuardianEmail(email)
+    }
+
+    fun getStudentFirstNameByStudentId(id: Long): String {
+        return studentRepository.getStudentFirstNameById(id)
+    }
+
+    fun getStudentLastNameByStudentId(id: Long): String {
+        return studentRepository.findStudentLastNameById(id)
+    }
+
+    fun getStudentFullNameById(id: Long): String {
+        return studentRepository.getStudentFirstNameById(id) + " " + studentRepository.findStudentLastNameById(id)
+    }
+
+    fun getStudentGuardianName(id: Long): String {
+        return studentRepository.findGuardianNameById(id)
+    }
+
+    fun getStudentGuardianEmail(id: Long): String {
+        return studentRepository.findGuardianEmailById(id)
+    }
+
+    fun getStudentGuardianMobile(id: Long): String {
+        return studentRepository.findGuardianMobileById(id)
+    }
+
 }
